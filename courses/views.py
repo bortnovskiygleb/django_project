@@ -10,7 +10,6 @@ def courses(request):
     if request.method == "POST" and form.is_valid():
         date = str(form.cleaned_data['date']).split('-')
         courses_date = components.select_courses_by_date(date[0], date[1], date[2])
-        print(courses_date)
         if courses_date == -1:
             error = 'Неправильный формат ввода'
             courses_date = []
